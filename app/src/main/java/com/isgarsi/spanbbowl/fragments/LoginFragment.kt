@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.isgarsi.spanbbowl.R
 import com.isgarsi.spanbbowl.databinding.FragmentLoginBinding
-import com.isgarsi.spanbbowl.models.Credentials
 import com.isgarsi.spanbbowl.utils.snackBar
 
 class LoginFragment : Fragment(), View.OnClickListener {

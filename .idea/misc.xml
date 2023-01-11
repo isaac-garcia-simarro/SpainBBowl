@@ -3,15 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1055" />
         <entry key="app/src/main/res/drawable/button_ripple.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button_ripple_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edittext_rounded_enabled.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1055" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.1326388888888889" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.10833333333333334" />
+        <entry key="app/src/main/res/layout/activity_help.xml" value="0.10104166666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.17685185185185184" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/layout/fragment_dices.xml" value="0.10833333333333334" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_passes.xml" value="0.10833333333333334" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_skills.xml" value="0.12916666666666668" />
+        <entry key="app/src/main/res/layout/fragment_tables.xml" value="0.11510416666666666" />
       </map>
     </option>
   </component>

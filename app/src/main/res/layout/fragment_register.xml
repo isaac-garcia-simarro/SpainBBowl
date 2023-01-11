@@ -89,7 +89,7 @@
                 android:layout_height="@dimen/login_button_xl_height"
                 android:background="@drawable/button_ripple"
                 android:text="@string/login_go_login"
-                android:textColor="@color/secondary_text"
+                android:textColor="@color/button_text"
                 android:textSize="@dimen/login_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

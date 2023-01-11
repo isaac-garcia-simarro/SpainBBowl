@@ -2,14 +2,11 @@ package com.isgarsi.spanbbowl.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.isgarsi.spanbbowl.R
 import com.isgarsi.spanbbowl.databinding.ActivityLoginBinding
-import com.isgarsi.spanbbowl.databinding.FragmentLoginBinding
 import com.isgarsi.spanbbowl.fragments.LoginFragment
 import com.isgarsi.spanbbowl.fragments.RegisterFragment
 import com.isgarsi.spanbbowl.utils.fragmentTransactionBackStack
@@ -52,7 +49,7 @@ class LoginActivity : AppCompatActivity(),
     }
 
     private fun goToMain(){
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, MainMenuActivity::class.java))
     }
 
 
@@ -63,12 +60,7 @@ class LoginActivity : AppCompatActivity(),
         mAuth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = mAuth.currentUser!!
-                    if (user.isEmailVerified) {
-                        goToMain()
-                    }else{
-                        snackBar(getString(R.string.login_sign_in_error_user_not_verified_msg), binding.root)
-                    }
+                    goToMain()
                 } else {
                     snackBar(getString(R.string.login_sign_in_error_user_msg), binding.root)
                 }
