@@ -9,6 +9,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_password">Password</string>
+    <string name="login_go_login">Back</string>
+    <string name="login_confirm_password">Confirm Password</string>
+    <string name="invalid_passwords">Password not the same</string>
+    <string name="login_sign_up_correctly_msg">An email has been sent to you. Please, confirm before sign in.</string>
+    <string name="login_sign_up_error_msg">An unexpected error occurred, please try again.</string>
+    <string name="login_sign_up_error_data_msg">Please fill all the fields and confirm the password</string>
+    <string name="login_sign_in_error_user_msg">The user does not exist, check the fields and try again</string>
+    <string name="login_sign_in_error_user_not_verified_msg">Confirm your email before logging in</string>
 </resources>

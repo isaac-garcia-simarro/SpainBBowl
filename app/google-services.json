@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517414155671",
+    "project_id": "span-bbowl",
+    "storage_bucket": "span-bbowl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517414155671:android:a9dd27696876c0715c40d2",
+        "android_client_info": {
+          "package_name": "com.isgarsi.spanbbowl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517414155671-e370phpn55go5elod73vdgsebeq1981a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1K0Q6_dR-HbYkdZbqw0V_t8Ed-cDvDXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517414155671-e370phpn55go5elod73vdgsebeq1981a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

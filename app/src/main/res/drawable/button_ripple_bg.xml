@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/accent_dark"
+    tools:targetApi="lollipop">
+    <!--Para que funcione en lollipop o superior -->
+
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/accent_dark" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/background"
+        android:drawable="@color/accent"/>
+
+</ripple>

@@ -3,16 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/button_ripple.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/button_ripple_bg.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/edittext_rounded_enabled.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.1326388888888889" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.17685185185185184" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17685185185185184" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.17685185185185184" />
-        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -9,4 +9,13 @@
     <string name="invalid_username">Usuario inválido</string>
     <string name="invalid_password">Contraseña incorrecta</string>
     <string name="login_failed">Credenciales incorrectas</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_go_login">Volver</string>
+    <string name="login_confirm_password">Confirmar contraseña</string>
+    <string name="invalid_passwords">Las contraseñas no coinciden</string>
+    <string name="login_sign_up_correctly_msg">Se ha enviado un email de confirmación. Confirme su email antes de iniciar sesión.</string>
+    <string name="login_sign_up_error_msg">Se ha producido un error. Inténtelo de nuevo.</string>
+    <string name="login_sign_up_error_data_msg">Por favor, rellene todos los campos y confirme su contraseña</string>
+    <string name="login_sign_in_error_user_msg">El usuario no existe, revise los datos introducidos y pruebe de nuevo</string>
+    <string name="login_sign_in_error_user_not_verified_msg">Confirme su email antes de iniciar sesión</string>
 </resources>
