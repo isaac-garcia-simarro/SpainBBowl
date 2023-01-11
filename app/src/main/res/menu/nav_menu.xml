@@ -5,11 +5,20 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_credentials"
-            android:title="@string/nav_menu_credentials"
-            android:icon="@drawable/ic_credentials_list"/>
-        <item android:id="@+id/nav_profile"
-            android:title="@string/nav_menu_profile"
-            android:icon="@drawable/ic_profile"/>
+        <item android:id="@+id/nav_timer"
+            android:title="@string/nav_item_shifts"
+            android:icon="@drawable/ic_shifts"/>
+        <item android:id="@+id/nav_dices"
+            android:title="@string/nav_item_dices"
+            android:icon="@drawable/ic_dices"/>
+        <item android:id="@+id/nav_passes"
+            android:title="@string/nav_item_passes"
+            android:icon="@drawable/ic_passes2"/>
+        <item android:id="@+id/nav_skills"
+            android:title="@string/nav_item_skills"
+            android:icon="@drawable/ic_skills"/>
+        <item android:id="@+id/nav_tables"
+            android:title="@string/nav_item_tables"
+            android:icon="@drawable/ic_tables"/>
     </group>
 </menu>

@@ -49,7 +49,8 @@ class LoginActivity : AppCompatActivity(),
     }
 
     private fun goToMain(){
-        startActivity(Intent(this, MainMenuActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 
 

@@ -1,3 +1,3 @@
 package com.isgarsi.spanbbowl.models
 
-data class MenuItems(var imageId: Int, var optionName: String)
+data class MainMenuItem(var position: Int, var imageId: Int, var optionName: String)

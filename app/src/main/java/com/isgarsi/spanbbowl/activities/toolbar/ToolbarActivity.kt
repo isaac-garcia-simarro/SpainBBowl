@@ -10,11 +10,13 @@ open class ToolbarActivity : AppCompatActivity(), IToolbar {
 
     override fun toolbarToLoad(toolbar: Toolbar?) {
         _toolbar = toolbar
-        _toolbar?.let{ (it) }
+        //_toolbar?.let{ (it) }
         setSupportActionBar(_toolbar)
     }
 
     override fun enableHomeDisplay(value: Boolean) {
         actionBar?.setDisplayHomeAsUpEnabled(value)
     }
+
+
 }

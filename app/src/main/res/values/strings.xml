@@ -18,6 +18,17 @@
     <string name="login_sign_up_error_data_msg">Please fill all the fields and confirm the password</string>
     <string name="login_sign_in_error_user_msg">The user does not exist, check the fields and try again</string>
     <string name="login_sign_in_error_user_not_verified_msg">Confirm your email before logging in</string>
+    <string name="login_log_out">Log Out</string>
+
+
+    <!-- Navigation Bar -->
+    <string name="open_drawer">Navigation Drawer is open</string>
+    <string name="close_drawer">Navigation Drawer is close</string>
+    <string name="nav_item_shifts">Shifts</string>
+    <string name="nav_item_dices">Dices</string>
+    <string name="nav_item_passes">Passes</string>
+    <string name="nav_item_skills">Skills</string>
+    <string name="nav_item_tables">Tables</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

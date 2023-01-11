@@ -13,4 +13,7 @@
     <color name="on_surface">#000000</color>
     <color name="on_error">#FFFFFF</color>
     <color name="button_text">#FFFFFE</color>
+    <color name="drawer_grey_selector">#E7E6E5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background_edittext">#DBCDFC</color>
 </resources>

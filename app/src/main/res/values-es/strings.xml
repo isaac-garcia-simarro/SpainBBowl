@@ -18,4 +18,14 @@
     <string name="login_sign_up_error_data_msg">Por favor, rellene todos los campos y confirme su contraseña</string>
     <string name="login_sign_in_error_user_msg">El usuario no existe, revise los datos introducidos y pruebe de nuevo</string>
     <string name="login_sign_in_error_user_not_verified_msg">Confirme su email antes de iniciar sesión</string>
+    <string name="login_log_out">Cerrar sesión</string>
+
+    <!-- Navigation Bar -->
+    <string name="open_drawer">Navigation Drawer abierta</string>
+    <string name="close_drawer">Navigation Drawer cerrada</string>
+    <string name="nav_item_shifts">Turnos</string>
+    <string name="nav_item_dices">Dados</string>
+    <string name="nav_item_passes">Pases</string>
+    <string name="nav_item_skills">Habilidades</string>
+    <string name="nav_item_tables">Tablas</string>
 </resources>

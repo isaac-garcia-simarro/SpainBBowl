@@ -1,60 +1,89 @@
 package com.isgarsi.spanbbowl.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.igs.passwordmanager.listeners.RecyclerMainActivityListener
 import com.isgarsi.spanbbowl.R
+import com.isgarsi.spanbbowl.adapters.MainMenuItemsAdapter
+import com.isgarsi.spanbbowl.databinding.FragmentLoginBinding
+import com.isgarsi.spanbbowl.databinding.FragmentMainMenuBinding
+import com.isgarsi.spanbbowl.models.MainMenuItem
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+const val MM_SHIFTS = 1
+const val MM_DICES = 2
+const val MM_SKILLS = 3
+const val MM_PASSES = 4
+const val MM_TABLES = 5
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MainMenuFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MainMenuFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class MainMenuFragment : Fragment(),
+    RecyclerMainActivityListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentMainMenuBinding
+    private val mList: ArrayList<MainMenuItem> = ArrayList()
+    private lateinit var mAdapter: MainMenuItemsAdapter
+    private var mListener: IMainMenuFragmentListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_menu, container, false)
+        binding = FragmentMainMenuBinding.inflate(layoutInflater, container, false)
+        setUpRecyclerView()
+        return binding.root
+    }
+
+    override fun onAttach(context: Context) {
+        mListener = if(context is IMainMenuFragmentListener)  context else null
+        super.onAttach(context)
+    }
+
+    override fun onDetach() {
+        mListener = null
+        super.onDetach()
+    }
+
+    private fun setUpRecyclerView() {
+        mList.clear()
+        mList.add(MainMenuItem(MM_SHIFTS, R.drawable.ic_shifts, getString(R.string.nav_item_shifts)))
+        mList.add(MainMenuItem(MM_DICES, R.drawable.ic_dices, getString(R.string.nav_item_dices)))
+        mList.add(MainMenuItem(MM_PASSES, R.drawable.ic_passes2, getString(R.string.nav_item_passes)))
+        mList.add(MainMenuItem(MM_SKILLS, R.drawable.ic_skills, getString(R.string.nav_item_skills)))
+        mList.add(MainMenuItem(MM_TABLES, R.drawable.ic_tables, getString(R.string.nav_item_tables)))
+
+        val layoutManager = LinearLayoutManager(context)
+        mAdapter = MainMenuItemsAdapter(mList, this, requireContext())
+
+        binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.layoutManager = layoutManager
+        binding.recyclerView.itemAnimator = DefaultItemAnimator()
+        binding.recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+
+        binding.recyclerView.adapter = mAdapter
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MainMenuFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MainMenuFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = MainMenuFragment()
+    }
+
+
+    /* ***************************************
+    RecyclerMainActivityListener
+     */
+    override fun onItemSelected(item: MainMenuItem) {
+        mListener?.onClickMenuItem(item)
+    }
+
+
+    interface IMainMenuFragmentListener{
+        fun onClickMenuItem(item: MainMenuItem)
     }
 }

@@ -5,11 +5,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
+        android:background="@color/background"
         tools:context=".fragments.RegisterFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/background"
             android:focusableInTouchMode="true"> <!-- android:focusableInTouchMode="true" para evitar que se abra el teclado al iniciar la actividad -->
 
             <EditText
@@ -22,6 +24,8 @@
                 android:background="@drawable/edittext_rounded_enabled"
                 android:hint="@string/prompt_email"
                 android:inputType="textEmailAddress"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:paddingLeft="@dimen/login_edit_text_space"
                 android:paddingRight="@dimen/login_edit_text_space"
                 android:textSize="@dimen/login_text_size"
@@ -39,6 +43,8 @@
                 android:layout_marginStart="32dp"
                 android:background="@drawable/edittext_rounded_enabled"
                 android:hint="@string/login_password"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:inputType="textPassword"
                 android:paddingLeft="@dimen/login_edit_text_space"
                 android:paddingRight="@dimen/login_edit_text_space"
@@ -58,6 +64,8 @@
                 android:background="@drawable/edittext_rounded_enabled"
                 android:hint="@string/login_confirm_password"
                 android:inputType="textPassword"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:paddingLeft="@dimen/login_edit_text_space"
                 android:paddingRight="@dimen/login_edit_text_space"
                 android:textSize="@dimen/login_text_size"

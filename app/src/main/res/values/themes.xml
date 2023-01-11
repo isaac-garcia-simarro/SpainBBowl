@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SpanBBowl" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.SpanBBowl" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_variant</item>
@@ -21,5 +21,42 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <!-- toolbar -->
+    <style name="AppTheme.Toolbar" parent="Theme.SpanBBowl">
+        <item name="android:background">@color/primary_variant</item>
+        <!--This line changes the color of text in Toolbar-->
+        <item name="android:textColorPrimary">@color/on_primary</item>
+        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
+        <item name="android:textColorSecondary">@color/on_primary</item>
+    </style>
+
+    <!-- Menu toolbar -->
+    <style name="MyActionBar.MenuTextStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Menu">
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24dip</item>
+        <item name="android:background">@color/primary_variant</item>
+    </style>
+
+    <!-- Navigation view style -->
+    <style name="DrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/secondary_variant</item>
+    </style>
+    <style name="DrawerMenuStyle">
+        <item name="colorPrimary">@color/secondary_variant</item>
+        <item name="colorControlHighlight">@color/drawer_grey_selector</item>
+        <item name="itemIconTint">@color/primary_variant</item>
+        <item name="itemTextColor">@color/primary_variant</item>
+    </style>
+
+    <style name="MyOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/secondary_variant</item>
+    </style>
+
+    <!-- Sirve para desactivar preview del activity si iniciamos con flags NEW_TASK -->
+    <style name="NoPreview" parent="Theme.SpanBBowl">
+        <item name="android:windowDisablePreview">true</item>
     </style>
 </resources>

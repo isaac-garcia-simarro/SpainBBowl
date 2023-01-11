@@ -7,7 +7,7 @@ import com.isgarsi.spanbbowl.fragments.*
 import com.isgarsi.spanbbowl.utils.fragmentTransactionNoBackStack
 
 const val DICES = 1
-const val SKILLS = 1
+const val SKILLS = 2
 const val PASSES = 3
 const val TABLES = 4
 const val ARG_NAME = "FRAGMENT_TYPE";
