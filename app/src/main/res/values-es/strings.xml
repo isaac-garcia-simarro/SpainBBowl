@@ -28,4 +28,12 @@
     <string name="nav_item_passes">Pases</string>
     <string name="nav_item_skills">Habilidades</string>
     <string name="nav_item_tables">Tablas</string>
+
+    <!-- shiftsFragment -->
+    <string name="start">Iniciar</string>
+    <string name="pause">Pausar</string>
+    <string name="reset">Reiniciar</string>
+    <string name="player1">Jugador 1</string>
+    <string name="player2">Jugador 2</string>
+    <string name="shift">Turno</string>
 </resources>
