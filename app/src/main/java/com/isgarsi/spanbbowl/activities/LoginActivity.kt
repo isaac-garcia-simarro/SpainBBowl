@@ -25,27 +25,11 @@ class LoginActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
 
-    override fun onStart() {
-        super.onStart()
-
-        val currentUser = mAuth.currentUser
-        updateUI(currentUser)
-    }
-
-    private fun updateUI(currentUser: FirebaseUser?) {
-        // Check if user is signed in (non-null) and update UI accordingly.
-        if(currentUser != null){
-            //User logged
-            // Go to main activity
-            goToMain()
-        }else{//Login fragment
-            fragmentTransactionNoBackStack(
-                supportFragmentManager,
-                LoginFragment.newInstance(),
-                R.id.container)
-        }
+        fragmentTransactionNoBackStack(
+            supportFragmentManager,
+            LoginFragment.newInstance(),
+            R.id.container)
     }
 
     private fun goToMain(){
