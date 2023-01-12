@@ -31,10 +31,18 @@
     <string name="nav_item_tables">Tables</string>
 
     <!-- shiftsFragment -->
-    <string name="start">Start</string>
+    <string name="resume">Resume</string>
     <string name="pause">Pause</string>
     <string name="reset">Reset</string>
     <string name="player1">Player 1</string>
     <string name="player2">Player 2</string>
     <string name="shift">Shift</string>
+
+    <!-- Dialogs -->
+    <string name="accept">OK</string>
+    <string name="shift_finished_dialog_message">Your turn is over</string>
+    <string name="shift_reset_dialog_message">Are you sure you want to restart the game?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
 </resources>

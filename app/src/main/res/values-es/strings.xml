@@ -30,10 +30,17 @@
     <string name="nav_item_tables">Tablas</string>
 
     <!-- shiftsFragment -->
-    <string name="start">Iniciar</string>
+    <string name="resume">Reanudar</string>
     <string name="pause">Pausar</string>
     <string name="reset">Reiniciar</string>
     <string name="player1">Jugador 1</string>
     <string name="player2">Jugador 2</string>
     <string name="shift">Turno</string>
+
+    <!-- Dialogs -->
+    <string name="accept">Aceptar</string>
+    <string name="shift_finished_dialog_message">El tiempo de su turno ha terminado</string>
+    <string name="shift_reset_dialog_message">¿Seguro que desea reiniciar la partida?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
 </resources>

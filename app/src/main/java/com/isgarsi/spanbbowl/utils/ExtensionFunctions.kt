@@ -4,6 +4,9 @@ import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.os.Build
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
@@ -14,6 +17,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.snackbar.Snackbar
@@ -119,4 +124,18 @@ fun String.toSHA256(): String{
         .getInstance("SHA-256")
         .digest(this.toByteArray())
         .fold("", { str, it -> str + "%02x".format(it) })
+}
+
+fun Fragment.vibratePhone(context: Context) {
+    val buzzer = context.getSystemService<Vibrator>()
+    val pattern = longArrayOf(0, 200, 100, 300)
+
+    buzzer?.let {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            buzzer.vibrate(VibrationEffect.createWaveform(pattern, -1))
+        } else {
+            //deprecated in API 26
+            buzzer.vibrate(pattern, -1)
+        }
+    }
 }
