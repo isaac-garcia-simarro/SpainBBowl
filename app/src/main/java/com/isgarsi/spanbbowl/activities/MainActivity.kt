@@ -3,6 +3,7 @@ package com.isgarsi.spanbbowl.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
@@ -48,6 +49,9 @@ class MainActivity : ToolbarActivity(),
         toggle.syncState()
 
         binding.navView.setNavigationItemSelectedListener(this)
+
+        val tvDisplayName: TextView = binding.navView.getHeaderView(0).findViewById(R.id.navTextViewEmail)
+        tvDisplayName.text = FirebaseAuth.getInstance().currentUser?.email
 
         binding.navView.menu.getItem(0).isChecked = true
 
