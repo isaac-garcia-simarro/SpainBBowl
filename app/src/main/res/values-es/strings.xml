@@ -37,6 +37,11 @@
     <string name="player2">Jugador 2</string>
     <string name="shift">Turno</string>
 
+    <!-- dicesFragment -->
+    <string name="heads">Cara</string>
+    <string name="tails">Cruz</string>
+    <string name="result">Resultado</string>
+
     <!-- Dialogs -->
     <string name="accept">Aceptar</string>
     <string name="shift_finished_dialog_message">El tiempo de su turno ha terminado</string>

@@ -11,9 +11,6 @@
         <item android:id="@+id/nav_dices"
             android:title="@string/nav_item_dices"
             android:icon="@drawable/ic_dices"/>
-        <item android:id="@+id/nav_passes"
-            android:title="@string/nav_item_passes"
-            android:icon="@drawable/ic_passes2"/>
         <item android:id="@+id/nav_skills"
             android:title="@string/nav_item_skills"
             android:icon="@drawable/ic_skills"/>

@@ -19,10 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.HelpActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activities.GameActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

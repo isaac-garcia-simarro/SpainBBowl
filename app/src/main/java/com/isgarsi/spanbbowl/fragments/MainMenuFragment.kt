@@ -20,8 +20,7 @@ import com.isgarsi.spanbbowl.models.MainMenuItem
 const val MM_SHIFTS = 1
 const val MM_DICES = 2
 const val MM_SKILLS = 3
-const val MM_PASSES = 4
-const val MM_TABLES = 5
+const val MM_TABLES = 4
 
 class MainMenuFragment : Fragment(),
     RecyclerMainActivityListener {
@@ -54,7 +53,6 @@ class MainMenuFragment : Fragment(),
         mList.clear()
         mList.add(MainMenuItem(MM_SHIFTS, R.drawable.ic_shifts, getString(R.string.nav_item_shifts)))
         mList.add(MainMenuItem(MM_DICES, R.drawable.ic_dices, getString(R.string.nav_item_dices)))
-        mList.add(MainMenuItem(MM_PASSES, R.drawable.ic_passes2, getString(R.string.nav_item_passes)))
         mList.add(MainMenuItem(MM_SKILLS, R.drawable.ic_skills, getString(R.string.nav_item_skills)))
         mList.add(MainMenuItem(MM_TABLES, R.drawable.ic_tables, getString(R.string.nav_item_tables)))
 

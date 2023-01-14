@@ -26,6 +26,7 @@ class MainActivity : ToolbarActivity(),
     MainMenuFragment.IMainMenuFragmentListener{
 
     private lateinit var binding: ActivityMainBinding
+    private var anyOptionSelected = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,27 +74,26 @@ class MainActivity : ToolbarActivity(),
                     f = DicesFragment.newInstance()
                 }
             }
-            R.id.nav_passes -> {
-                if (!binding.navView.menu.getItem(2).isChecked) {
-                    f = PassesFragment.newInstance()
-                }
-            }
             R.id.nav_skills -> {
-                if (!binding.navView.menu.getItem(3).isChecked) {
+                if (!binding.navView.menu.getItem(2).isChecked) {
                     f = SkillsFragment.newInstance()
                 }
             }
             R.id.nav_tables -> {
-                if (!binding.navView.menu.getItem(4).isChecked) {
+                if (!binding.navView.menu.getItem(3).isChecked) {
                     f = TablesFragment.newInstance()
                 }
             }
         }
 
-        fragmentTransactionBackStack(supportFragmentManager, f, R.id.container)
-
+        changeFragment(f)
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onBackPressed() {
+        anyOptionSelected = false
+        super.onBackPressed()
     }
 
 
@@ -110,10 +110,19 @@ class MainActivity : ToolbarActivity(),
         when (item.position) {
             MM_SHIFTS -> f = ShiftsFragment.newInstance()
             MM_DICES -> f = DicesFragment.newInstance()
-            MM_PASSES -> f = PassesFragment.newInstance()
             MM_SKILLS -> f = SkillsFragment.newInstance()
             MM_TABLES -> f = TablesFragment.newInstance()
         }
-        fragmentTransactionBackStack(supportFragmentManager, f, R.id.container)
+        changeFragment(f)
+    }
+
+    fun changeFragment(f: Fragment){
+        //Only the First time, save in backstack
+        if(anyOptionSelected) {
+            fragmentTransactionNoBackStack(supportFragmentManager, f, R.id.container)
+        }else{
+            fragmentTransactionBackStack(supportFragmentManager, f, R.id.container)
+            anyOptionSelected = true
+        }
     }
 }
