@@ -3,18 +3,20 @@ package com.isgarsi.spanbbowl.fragments
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.os.Vibrator
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.isgarsi.spanbbowl.R
+import com.isgarsi.spanbbowl.activities.MainActivity
+import com.isgarsi.spanbbowl.activities.SettingsActivity
 import com.isgarsi.spanbbowl.databinding.FragmentShiftsBinding
 import com.isgarsi.spanbbowl.utils.CustomCountDownTimer
 import com.isgarsi.spanbbowl.utils.vibratePhone
@@ -23,7 +25,6 @@ import java.util.concurrent.TimeUnit
 
 private const val PLAYER1 = 1
 private const val PLAYER2 = 2
-private const val MAX_SHIFTS = 8
 
 class ShiftsFragment : Fragment(), View.OnClickListener,
     CustomCountDownTimer.ICustomCountDownTimer{
@@ -42,6 +43,12 @@ class ShiftsFragment : Fragment(), View.OnClickListener,
     private var shiftP2 = 0
     private var currentShift = PLAYER1
     private var mTimer: CustomCountDownTimer? = null
+
+    private lateinit var player1Name: String
+    private lateinit var player2Name: String
+    private var maxShifts = 8
+    private var minutesPerShift = 4L
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,12 +72,55 @@ class ShiftsFragment : Fragment(), View.OnClickListener,
         binding.btnPause.setOnClickListener(this)
         binding.btnReset.setOnClickListener(this)
 
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+
+    override fun onResume() {
+        loadPreferences()
+        super.onResume()
+    }
+
+    private fun loadPreferences(){
+        maxShifts = Math.max(PreferenceManager.getDefaultSharedPreferences(requireContext()).getString("shifts_number", "8")!!.toInt(),1)
+        minutesPerShift = Math.min(PreferenceManager.getDefaultSharedPreferences(requireContext()).getString("shift_time", "4")!!.toLong(),59)
+        player1Name = PreferenceManager.getDefaultSharedPreferences(requireContext()).getString("player1_name", getString(R.string.player1))
+            .toString()
+        player2Name = PreferenceManager.getDefaultSharedPreferences(requireContext()).getString("player2_name", getString(R.string.player2))
+            .toString()
+
+        binding.textViewNameP1.text = player1Name
+        binding.textViewNameP2.text = player2Name
+
+        val minutesText = if(minutesPerShift < 10) "0$minutesPerShift:00" else "$minutesPerShift:00"
+        binding.textViewTimeP1.text = minutesText
+        binding.textViewTimeP2.text = minutesText
     }
 
     companion object {
         @JvmStatic
         fun newInstance() = ShiftsFragment()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.shift_settings_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.shifts_settings -> {
+                if(shiftP1 > 0 || shiftP2 > 0){
+                    Toast.makeText(requireContext(), getString(R.string.alert_game_started), Toast.LENGTH_LONG).show()
+                }else {
+                    startActivity(Intent(requireContext(), SettingsActivity::class.java))
+                }
+                return false
+            }
+            else -> {}
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onClick(v: View) {
@@ -84,8 +134,19 @@ class ShiftsFragment : Fragment(), View.OnClickListener,
 
     private fun changeShift(player: Int) {
         binding.btnPause.isEnabled = true
-        if(shiftP1 == MAX_SHIFTS && shiftP2 == MAX_SHIFTS){
-            Toast.makeText(context, "Game finished", Toast.LENGTH_SHORT).show()//TODO
+        //Check if the game is finished
+        if(shiftP1 == maxShifts && shiftP2 == maxShifts){
+            vibratePhone(requireContext())
+            val builder: AlertDialog.Builder? = AlertDialog.Builder(requireContext())
+            builder?.apply {
+                setPositiveButton(R.string.accept,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        dialog.dismiss()
+                    })
+            }
+            builder?.setMessage(R.string.game_finished)?.setTitle(R.string.app_name)
+            val dialog: AlertDialog? = builder?.create()
+            dialog?.show()
         }else {
             //we assume it is player 1
             var backgroundColorP1 = R.color.primary_variant
@@ -142,7 +203,7 @@ class ShiftsFragment : Fragment(), View.OnClickListener,
     /* *******************TIMER************************ */
     fun startTimer(){
         mTimer?.let {it.cancelTimer()}
-        mTimer = CustomCountDownTimer(this)
+        mTimer = CustomCountDownTimer(this, minutesPerShift*60000)//in millis 1m = 60000 ms
         mTimer?.let {it.startTimer()}
     }
 

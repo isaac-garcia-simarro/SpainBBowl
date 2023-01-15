@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Span BBowl</string>
+    <string name="app_name">Spain BBowl</string>
     <string name="title_activity_login">Login</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -37,11 +37,18 @@
     <string name="player1">Player 1</string>
     <string name="player2">Player 2</string>
     <string name="shift">Shift</string>
-    
+    <string name="shift_settings">Settings</string>
+    <string name="alert_game_started">You cannot change preferences if the game is started.</string>
+
     <!-- dicesFragment -->
     <string name="heads">Heads</string>
     <string name="tails">Tails</string>
     <string name="result">Result</string>
+
+    <!-- tablesFragment -->
+    <string name="weather_table">WEATHER TABLE</string>
+    <string name="casualty_table">CASUALTY TABLE</string>
+
 
     <!-- Dialogs -->
     <string name="accept">OK</string>
@@ -49,5 +56,12 @@
     <string name="shift_reset_dialog_message">Are you sure you want to restart the game?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="game_finished">Game finished</string>
+
+    <!-- preferences -->
+    <string name="player1_name">Player 1 name</string>
+    <string name="player2_name">Player 2 name</string>
+    <string name="shift_time">Time per shift (minutes)</string>
+    <string name="shifts_number">Shifts (Quantity)</string>
 
 </resources>

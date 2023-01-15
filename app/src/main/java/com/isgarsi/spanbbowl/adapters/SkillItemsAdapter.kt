@@ -32,7 +32,7 @@ class SkillItemsAdapter(private var mList: List<SkillItem>) :
             }
         }
     }
-    // return the size of languageList
+
     override fun getItemCount(): Int {
         return mList.size
     }

@@ -120,11 +120,22 @@ class DicesFragment : Fragment(), View.OnClickListener {
 
     private fun rollANumericDice(max: Int){
         val res = (1..max).random()
-        showNumericDice(res)
+
+        if(max == 2) {//heads & tails dice
+            val sRes = if(res == 1) getString(R.string.heads) else getString(R.string.tails)
+            showHeadsTailsDice(sRes)
+        }else {//numeric dice
+            showNumericDice(res)
+        }
     }
 
     private fun showNumericDice(res: Int) {
         showHideResultsView()
         binding.textViewRes.text = "$res"
+    }
+
+    private fun showHeadsTailsDice(res: String){
+        showHideResultsView()
+        binding.textViewRes.text = res
     }
 }

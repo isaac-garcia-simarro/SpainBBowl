@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        app:key="player1_name"
+        app:title="@string/player1_name"
+        app:useSimpleSummaryProvider="true"
+        app:defaultValue="@string/player1"/>
+
+    <EditTextPreference
+        app:key="player2_name"
+        app:title="@string/player1_name"
+        app:useSimpleSummaryProvider="true"
+        app:defaultValue="@string/player2"/>
+
+    <EditTextPreference
+        app:key="shift_time"
+        app:title="@string/shift_time"
+        app:useSimpleSummaryProvider="true"
+        app:defaultValue="4"
+        android:inputType="numberDecimal"
+        android:digits="0123456789"/>
+
+    <EditTextPreference
+        app:key="shifts_number"
+        app:title="@string/shifts_number"
+        app:useSimpleSummaryProvider="true"
+        app:defaultValue="8"
+        android:inputType="numberDecimal"
+        android:digits="0123456789"/>
+
+</PreferenceScreen>

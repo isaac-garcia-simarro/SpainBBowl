@@ -33,9 +33,17 @@
         <entry key="app/src/main/res/layout/fragment_tables.xml" value="0.11510416666666666" />
         <entry key="app/src/main/res/layout/mainmenu_rv_item.xml" value="0.24205128205128204" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.12916666666666668" />
+        <entry key="app/src/main/res/layout/rv_casualty_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/rv_skills_item.xml" value="0.1515625" />
+        <entry key="app/src/main/res/layout/rv_table_item.xml" value="0.630188679245283" />
+        <entry key="app/src/main/res/layout/rv_weather_item.xml" value="0.44642857142857145" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.12916666666666668" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.12916666666666668" />
+        <entry key="app/src/main/res/menu/shift_settings_menu.xml" value="0.13333333333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1055" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.40396931966145844" />
+        <entry key="app/src/main/res/xml/shift_preferences.xml" value="0.13333333333333333" />
       </map>
     </option>
   </component>

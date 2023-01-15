@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:orientation="vertical"
     tools:context=".fragments.TablesFragment">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_table"
+            android:textColor="@color/white"
+            android:background="@color/primary_variant"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvWeatherTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"/>
+    </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/casualty_table"
+            android:textColor="@color/white"
+            android:background="@color/primary_variant"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvCasualtyTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"/>
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Span BBowl</string>
+    <string name="app_name">Spain BBowl</string>
     <string name="title_activity_login">Login</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Contraseña</string>
@@ -36,11 +36,17 @@
     <string name="player1">Jugador 1</string>
     <string name="player2">Jugador 2</string>
     <string name="shift">Turno</string>
+    <string name="shift_settings">Opciones</string>
+    <string name="alert_game_started">No puedes cambiar las preferencias si la partida está iniciada.</string>
 
     <!-- dicesFragment -->
     <string name="heads">Cara</string>
     <string name="tails">Cruz</string>
     <string name="result">Resultado</string>
+
+    <!-- tablesFragment -->
+    <string name="weather_table">TABLA DE TIEMPO</string>
+    <string name="casualty_table">TABLA DE LESIONES</string>
 
     <!-- Dialogs -->
     <string name="accept">Aceptar</string>
@@ -48,4 +54,11 @@
     <string name="shift_reset_dialog_message">¿Seguro que desea reiniciar la partida?</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
+    <string name="game_finished">Partida acabada</string>
+
+    <!-- preferences -->
+    <string name="player1_name">Nombre del jugador 1</string>
+    <string name="player2_name">Nombre del jugador 2</string>
+    <string name="shift_time">Tiempo por turno (minutos)</string>
+    <string name="shifts_number">Turnos (Cantidad)</string>
 </resources>
